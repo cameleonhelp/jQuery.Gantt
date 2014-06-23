@@ -28,19 +28,19 @@
     $.fn.gantt = function (options) {
 
         var cookieKey = "jquery.fn.gantt";
-        var scales = ["hours", "days", "weeks", "months"];
+        var scales = ["heures", "jours", "semaines", "mois"];
         //Default settings
         var settings = {
             source: [],
             itemsPerPage: 7,
-            months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+            months: ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"],
             dow: ["S", "M", "T", "W", "T", "F", "S"],
             navigate: "buttons",
-            scale: "days",
+            scale: "jours",
             useCookie: false,
-            maxScale: "months",
-            minScale: "hours",
-            waitText: "Please wait...",
+            maxScale: "mois",
+            minScale: "heures",
+            waitText: "Chargement en cours...",
             onItemClick: function (data) { return; },
             onAddClick: function (data) { return; },
             onRender: function() { return; },
@@ -119,14 +119,14 @@
         // depending on the active scale
         Date.prototype.getRepDate = function () {
             switch (settings.scale) {
-                case "hours":
+                case "heures":
                     return this.getTime();
-                case "weeks":
+                case "semaines":
                     return this.getDayForWeek().getTime();
-                case "months":
+                case "mois":
                     return new Date(this.getFullYear(), this.getMonth(), 1).getTime();
                 default:
-                    return this.getTime();
+                    return this.getDate();
             }
         };
 
