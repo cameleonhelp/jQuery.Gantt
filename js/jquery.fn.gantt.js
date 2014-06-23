@@ -34,7 +34,7 @@
             source: [],
             itemsPerPage: 7,
             months: ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"],
-            dow: ["S", "M", "T", "W", "T", "F", "S"],
+            dow: ["Di", "Lu", "Ma", "Me", "Je", "Ve", "Sa"],
             navigate: "buttons",
             scale: "jours",
             useCookie: false,
